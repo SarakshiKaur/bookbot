@@ -3,15 +3,13 @@ def get_word_count(book_data):
     return len(word_list)
 
 def get_unique_string_count(book_data):
-    word_list = book_data.split()
     string_count_dict = {}
 
-    for word in word_list:
-        for string in word.lower():
-            if string not in string_count_dict:
-                string_count_dict[string] = 1
-            else:
-                string_count_dict[string] += 1
+    for string in book_data.lower():
+        if string not in string_count_dict:
+            string_count_dict[string] = 1
+        else:
+            string_count_dict[string] += 1
     
     return string_count_dict
 
